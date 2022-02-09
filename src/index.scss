@@ -1,0 +1,29 @@
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    &[dir='ltr'] {
+        direction: ltr;
+
+        * {
+            direction: ltr;
+            text-align: left;
+        }
+    }
+
+    &[dir='rtl'] {
+        direction: rtl;
+
+        * {
+            direction: rtl;
+            text-align: right;
+        }
+    }
+}
+html{
+    height: 100%;
+    
+}
+::-webkit-scrollbar{
+    display: none;
+}
