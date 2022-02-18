@@ -7,7 +7,7 @@ import "swiper/swiper.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import SwiperCore, { EffectCoverflow, Navigation } from "swiper";
 import "swiper/components/navigation/navigation.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import Logo from "./images/iust.png";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { toast, ToastContainer } from "react-toastify";
@@ -47,23 +47,27 @@ const useStyles = makeStyles(theme => ({
 function App() {
 
   SwiperCore.use([EffectCoverflow, Navigation]);
+  
+  const [imageUploader, setImageUploader] = useState(null)
   const classes = useStyles();
   const [categorySelected, setCategorySelected] = useState();
   const [category, setpst] = useState([]);
   const [projectList, setprojectList] = useState([]);
+  const [partnerdet,setpartnerdet]=useState({})
   const [Detailproject,setDetailproject]=useState({})
   const [activeStep, setActiveStep] = React.useState(0);
   const [projectid,setprojectid]=useState(null)
   const [partnerid,setpartnerid]=useState(null)
   const [skipped, setSkipped] = React.useState(new Set());
-  const [fname, setfname] = useState('');
-  const [lname, setlname] = useState('');
-  const [phone, setphone] = useState('');
-  const [email, setemail] = useState('');
-  const [degree, setdegree] = useState('');
-  const [workexp, setworkexp] = useState('');
-  const [supportdes, setsupportdes] = useState('');
-  const [expdes, setexpdes] = useState('');
+  const [fname, setfname] = useState(null);
+  const [lname, setlname] = useState(null);
+  const [phone, setphone] = useState(null);
+  const [email, setemail] = useState(null);
+  const [degree, setdegree] = useState(null);
+  const [workexp, setworkexp] = useState(null);
+  const [supportdes, setsupportdes] = useState(null);
+  const [expdes, setexpdes] = useState(null);
+  const uploadRef = useRef(null)
   const handleNext = () => {
     if(projectid===null){
       toast.error('یک پروژه را انتخاب کنید')
@@ -85,6 +89,7 @@ function App() {
  var partnerid=loc.split("partnerid=")
  console.log(partnerid[1])
  setpartnerid(partnerid[1])
+ getpartnerDetail(partnerid[1])
  getProject(partnerid[1])
   }, []);
 function getProject(partnerid){
@@ -109,6 +114,36 @@ fetch(Config()['api'] + "/user/projectlist?partnerId=" + partnerid, requestOptio
         response.json().then(rep => {
             console.log(rep)
             setprojectList(rep)
+        })
+
+
+
+
+
+    })
+    .catch(error => console.log('error', error));
+}
+function getpartnerDetail(partnerid){
+  var requestOptions = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+        // "Authorization": "Basic " + window.localStorage.getItem('basic')
+
+    }
+
+
+};
+
+fetch(Config()['api'] + "/user/partnerdes?partnerId=" + partnerid, requestOptions)
+    .then(response => {
+
+
+
+        response.json().then(rep => {
+            console.log(rep)
+            setpartnerdet(rep)
         })
 
 
@@ -149,6 +184,38 @@ fetch(Config()['api'] + "/user/projectdetail?partnerId=" + partnerid+"&projectId
     .catch(error => console.log('error', error));
    }, [projectid]);
 function submit(){
+  if(fname===null){
+    toast.error('نام را پر کنید')
+    return
+  }
+  if(lname===null){
+    toast.error('نام خانوادگی را پر کنید')
+    return
+  }
+  if(phone===null){
+    toast.error('تلفن را پر کنید')
+    return
+  }
+  if(email===null){
+    toast.error('ایمیل را پر کنید')
+    return
+  }
+  if(degree===null){
+    toast.error('درجه علمی را پر کنید')
+    return
+  }
+  if(workexp===null){
+    toast.error('سابقه کاری را پر کنید')
+    return
+  }
+  if(supportdes===null){
+    toast.error('نحوه پشتیبانی را پر کنید')
+    return
+  }
+  if(expdes===null){
+    toast.error('سوابق کاری را پر کنید')
+    return
+  }
   const body= {
    
     "name":fname,
@@ -158,7 +225,8 @@ function submit(){
  "degree":degree,
     "workexp":workexp,
     "supportdes":supportdes,
-    "hourdes":expdes
+    "hourdes":expdes,
+    "path":imageUploader
 }
   var requestOptions = {
     method: 'POST',
@@ -193,6 +261,43 @@ fetch(Config()['api'] + "/user/instituteuser?partnerId=" + partnerid+"&projectid
     })
     .catch(error => console.log('error', error));
 }
+function changeUploaderHandler(e) {
+ 
+  const FILE = e.target.files[0];
+  const form = new FormData();
+  form.append('file', FILE);
+  var requestOptions = {
+      method: 'POST',
+      headers: {
+
+      },
+      body: form
+
+
+  };
+
+  fetch(Config()['api'] + "/utility/image", requestOptions)
+      .then(response => {
+
+
+if(response.status===200){
+          response.json().then(rep => {
+toast.success('با موفقیت آپلود شد')
+           console.log(rep)
+              setImageUploader(rep.path)
+
+          })
+}
+  
+
+
+
+
+
+      })
+      .catch(error => console.log('error', error));
+
+}
   return (
     <div className="form-iust row">
         <div className='col-md-2 col-right'>
@@ -207,6 +312,7 @@ fetch(Config()['api'] + "/user/instituteuser?partnerId=" + partnerid+"&projectid
 <div className='row'>
   <div className='col-md-1'></div>
   <div className='col-md-10 col-xs-12 coldata'>
+    <h6>{partnerdet.description}</h6>
     <div className='box-data'>
     <Box sx={{ width: '100%' ,marginTop:'20px',marginBottom:'20px'}}>
       <Stepper activeStep={activeStep}>
@@ -244,7 +350,7 @@ fetch(Config()['api'] + "/user/instituteuser?partnerId=" + partnerid+"&projectid
             <div className='box-enter-data row'>
               <div className='each-box col-md-4 col-xs-12'>
 <h6>نام</h6>
-                    <input  value={fname}  onChange={(e)=>setfname(e.target.value)}/>
+                    <input required value={fname}  onChange={(e)=>setfname(e.target.value)}/>
               </div>
               <div className='each-box col-md-4 col-xs-12'>
 <h6>نام خانوادگی</h6>
@@ -274,6 +380,13 @@ fetch(Config()['api'] + "/user/instituteuser?partnerId=" + partnerid+"&projectid
 <h6>نحوه پشتیبانی پروژه</h6>
                     <textarea  value={supportdes}  onChange={(e)=>setsupportdes(e.target.value)}/>
               </div>
+              <div className='resumeup'>
+              <input accept="*" onChange={changeUploaderHandler} ref={uploadRef} className='uploader' type='file' />
+                                        <div onClick={() => uploadRef.current.click()} className='change-mode'>
+                                            <p>جهت آپلود روزمه کلیک کنید </p>
+                                        </div>
+              </div>
+       
             </div>
             
             
