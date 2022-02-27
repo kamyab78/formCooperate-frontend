@@ -7,6 +7,7 @@ import "./IRANSans/css/style.css";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Redirect, Route,Routes } from 'react-router-dom';
 import CompanyApp from "./CompanyApp";
+import Landing from './Landing/Landing'
 ReactDOM.render(
   <React.StrictMode>
         <Router>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Routes>
         <Route path='/user' element={<App/>}></Route>
         <Route path='/company' element={<CompanyApp/>}></Route>
+        <Route path='/landing' element={<Landing/>}></Route>
           </Routes>
           </Router>
 
