@@ -290,9 +290,32 @@ toast.success('با موفقیت آپلود شد')
       .catch(error => console.log('error', error));
 
 }
+// function just_persian(str){
+
+//   var p = /^[\u0600-\u06FF\s]+$/;
+
+//   if (!p.test(str)) {
+//       alert("not format");
+//       toast.error('لطفا فارسی وارد کنید')
+//       setfname(null)
+//       return
+//   }
+//   else{
+//     console.log(213123)
+//     setfname(str)
+//   }
+//   (e)=>setfname(e.target.value)
+// }
   return (
     <div className="form-iust row">
         <div className='col-md-2 col-right'>
+          <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
+          <input checked type="radio" id="persian" name="fav_language" value="persian" />
+<label for="persian" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>فارسی</label>
+<input type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/encompany?partnerid=1')}/>
+<label for="en" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>English</label>
+          </div>
+       
           <div className='box-logo'> 
             <img src={Logo}></img>
           </div>

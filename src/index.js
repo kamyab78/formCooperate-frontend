@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Redirect, Route,Routes } from 'react-router-do
 import CompanyApp from "./CompanyApp";
 import Landing from './Landing/Landing'
 import Vision from './Vision/Vision'
+import EnCompanyApp from './enCompany'
+import EnApp from './enApp'
 ReactDOM.render(
   <React.StrictMode>
         <Router>
@@ -16,7 +18,9 @@ ReactDOM.render(
    
         <Routes>
         <Route path='/user' element={<App/>}></Route>
+        <Route path='/enuser' element={<EnApp/>}></Route>
         <Route path='/company' element={<CompanyApp/>}></Route>
+        <Route path='/encompany' element={<EnCompanyApp/>}></Route>
         <Route path='/landing' element={<Landing/>}></Route>
         <Route path='/vision' element={<Vision/>}></Route>
           </Routes>

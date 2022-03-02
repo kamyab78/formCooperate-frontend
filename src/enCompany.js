@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./App.scss";
+import "./enCompany.scss";
 import Header from "./images/header.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
@@ -7,7 +7,7 @@ import "swiper/swiper.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import SwiperCore, { EffectCoverflow, Navigation } from "swiper";
 import "swiper/components/navigation/navigation.scss";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState ,useRef} from "react";
 import Logo from "./images/iust.png";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { toast, ToastContainer } from "react-toastify";
@@ -44,12 +44,11 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-function App() {
+function EnCompanyApp() {
 
   SwiperCore.use([EffectCoverflow, Navigation]);
-  
-  const [imageUploader, setImageUploader] = useState(null)
   const classes = useStyles();
+  const [imageUploader, setImageUploader] = useState(null)
   const [categorySelected, setCategorySelected] = useState();
   const [category, setpst] = useState([]);
   const [projectList, setprojectList] = useState([]);
@@ -60,17 +59,17 @@ function App() {
   const [partnerid,setpartnerid]=useState(null)
   const [skipped, setSkipped] = React.useState(new Set());
   const [fname, setfname] = useState(null);
-  const [lname, setlname] = useState(null);
+
   const [phone, setphone] = useState(null);
   const [email, setemail] = useState(null);
-  const [degree, setdegree] = useState(null);
+
   const [workexp, setworkexp] = useState(null);
   const [supportdes, setsupportdes] = useState(null);
   const [expdes, setexpdes] = useState(null);
   const uploadRef = useRef(null)
   const handleNext = () => {
     if(projectid===null){
-      toast.error('یک پروژه را انتخاب کنید')
+      toast.error('Choose a project')
     return
     }
     let newSkipped = skipped;
@@ -88,8 +87,8 @@ function App() {
  var loc = window.location.href
  var partnerid=loc.split("partnerid=")
  console.log(partnerid[1])
- setpartnerid(partnerid[1])
  getpartnerDetail(partnerid[1])
+ setpartnerid(partnerid[1])
  getProject(partnerid[1])
   }, []);
 function getProject(partnerid){
@@ -185,44 +184,37 @@ fetch(Config()['api'] + "/user/projectdetail?partnerId=" + partnerid+"&projectId
    }, [projectid]);
 function submit(){
   if(fname===null){
-    toast.error('نام را پر کنید')
+    toast.error('fill name')
     return
   }
-  if(lname===null){
-    toast.error('نام خانوادگی را پر کنید')
-    return
-  }
+
   if(phone===null){
-    toast.error('تلفن را پر کنید')
+    toast.error('fill phone')
     return
   }
   if(email===null){
-    toast.error('ایمیل را پر کنید')
-    return
-  }
-  if(degree===null){
-    toast.error('درجه علمی را پر کنید')
+    toast.error('fill email')
     return
   }
   if(workexp===null){
-    toast.error('سابقه کاری را پر کنید')
+    toast.error('Fill in the work history')
     return
   }
   if(supportdes===null){
-    toast.error('نحوه پشتیبانی را پر کنید')
+    toast.error('Fill out the support method')
     return
   }
   if(expdes===null){
-    toast.error('سوابق کاری را پر کنید')
+    toast.error('Fill in work records')
     return
   }
   const body= {
    
     "name":fname,
-  "lastname":lname,
+ 
     "phone":phone,
     "email":email,
- "degree":degree,
+
     "workexp":workexp,
     "supportdes":supportdes,
     "hourdes":expdes,
@@ -300,40 +292,27 @@ toast.success('با موفقیت آپلود شد')
 }
   return (
     <div className="form-iust row">
-        <div className='col-md-2 col-right'>
-        <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-          <input checked  type="radio" id="persian" name="fav_language" value="persian" />
-<label for="persian" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>فارسی</label>
-<input  type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/enuser?partnerid=1')}/>
-<label for="en" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>English</label>
-          </div>
-          <div className='box-logo'> 
-            <img src={Logo}></img>
-          </div>
-          
-          <h6>معاونت بین الملل</h6>
-        
-        </div>
+     
   <div className='col-md-10 col-xs-12 col-left'>
 <div className='row'>
   <div className='col-md-1'></div>
   <div className='col-md-10 col-xs-12 coldata'>
-    <h6>{partnerdet.description}</h6>
+  <h6>{partnerdet.description}</h6>
     <div className='box-data'>
     <Box sx={{ width: '100%' ,marginTop:'20px',marginBottom:'20px'}}>
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} style={{direction:'ltr'}}>
 
             <Step key='yek' >
-              <StepLabel>انتخاب پروژه</StepLabel>
+              <StepLabel>Project selection</StepLabel>
             </Step>
             <Step key='do'>
-              <StepLabel >جزییات پروژه</StepLabel>
+              <StepLabel >Project detail</StepLabel>
             </Step>
             <Step key='se' >
-              <StepLabel >وارد کردن اطلاعات</StepLabel>
+              <StepLabel >Enter information</StepLabel>
             </Step>
             <Step key='char' >
-              <StepLabel >وضعیت</StepLabel>
+              <StepLabel >Status</StepLabel>
             </Step>
       </Stepper>
       {activeStep === 3 ? (
@@ -341,8 +320,8 @@ toast.success('با موفقیت آپلود شد')
           <Typography sx={{ mt: 2, mb: 1 }}>
            <div className='finishBox'>
              <img src={Success}></img>
-             <h1>با تشکر از ثبت شما</h1>
-             <h6>اطلاعات شما با موفقیت ثبت شد</h6>
+             <h1>Thanks for your registration</h1>
+             <h6>Your information was successfully registered</h6>
            </div>
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
@@ -354,85 +333,83 @@ toast.success('با موفقیت آپلود شد')
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
             <div className='box-enter-data row'>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>نام</h6>
-                    <input required value={fname}  onChange={(e)=>setfname(e.target.value)}/>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Company Name</h6>
+                    <input  value={fname}  onChange={(e)=>setfname(e.target.value)}/>
               </div>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>نام خانوادگی</h6>
-                    <input value={lname}  onChange={(e)=>setlname(e.target.value)} />
-              </div>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>شماره موبایل</h6>
+   
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Phone</h6>
                     <input value={phone}  onChange={(e)=>setphone(e.target.value)} />
               </div>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>ایمیل</h6>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Email</h6>
                     <input value={email}  onChange={(e)=>setemail(e.target.value)} />
               </div>
               <div className='each-box col-md-4 col-xs-12'>
-<h6>درجه علمی</h6>
-                    <input value={degree}  onChange={(e)=>setdegree(e.target.value)} />
-              </div>
+    </div>
               <div className='each-box col-md-4 col-xs-12'>
-<h6>سابقه کار(سال)</h6>
+   </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6 >Work experience (years)</h6>
                     <input  value={workexp}  onChange={(e)=>setworkexp(e.target.value)}/>
               </div>
-              <div className='each-box col-md-12 col-xs-12'>
-<h6>سوابق کاری</h6>
+    
+              <div className='each-box col-md-12 col-xs-12' style={{textAlign:'left'}}>
+<h6>Resume</h6>
                     <textarea  value={expdes}  onChange={(e)=>setexpdes(e.target.value)}/>
               </div>
-              <div className='each-box col-md-12 col-xs-12'>
-<h6>نحوه پشتیبانی پروژه</h6>
+              <div className='each-box col-md-12 col-xs-12' style={{textAlign:'left'}}>
+<h6>How to support the project</h6>
                     <textarea  value={supportdes}  onChange={(e)=>setsupportdes(e.target.value)}/>
               </div>
-              <div className='resumeup'>
+              <div className='resumeup' style={{textAlign:'left'}}>
               <input accept="*" onChange={changeUploaderHandler} ref={uploadRef} className='uploader' type='file' />
                                         <div onClick={() => uploadRef.current.click()} className='change-mode'>
-                                            <p>جهت آپلود روزمه کلیک کنید </p>
+                                            <p>Click to upload resume </p>
                                         </div>
               </div>
-       
             </div>
             
             
             </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Button onClick={submit}>
+            Submit
+            </Button>
+            <Box sx={{ flex: '1 1 auto' }} />
+  
+
+        
             <Button
               color="inherit"
               disabled={activeStep === 0}
               onClick={handleBack}
               sx={{ mr: 1 }}
             >
-              بازگشت
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-  
-
-            <Button onClick={submit}>
-            ثبت
+              Back
             </Button>
           </Box>
         </React.Fragment>
       ):activeStep ===1?(
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-            <div className='boxdetail'>
+            <div className='boxdetail' style={{textAlign:'left'}}>
 
 
               <div className='box'>
-                <h6>
-                  عنوان پروژه
+                <h6  style={{textAlign:'left'}}>
+                Project Title
                   </h6>
-<div  className='inp'>
+<div  className='inp' >
 {Detailproject.title}
 </div>
                 
               </div>
      
               <div className='box'>
-                <h6>
-                 حوزه تخصصی
+                <h6  style={{textAlign:'left'}}>
+                Area of ​​Expertise
                   </h6>
 <div  className='inp'>
 {Detailproject.activitydomain}
@@ -440,8 +417,8 @@ toast.success('با موفقیت آپلود شد')
                 
               </div>
               <div className='box'>
-                <h6>
-               توضیحات
+                <h6  style={{textAlign:'left'}}>
+              Description
                   </h6>
 <div  className='inp'>
 {Detailproject.description}
@@ -454,27 +431,28 @@ toast.success('با موفقیت آپلود شد')
             
             </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Button onClick={handleNext}>
+       Continues
+            </Button>
+         
+            <Box sx={{ flex: '1 1 auto' }} />
+  
             <Button
               color="inherit"
               disabled={activeStep === 0}
               onClick={handleBack}
               sx={{ mr: 1 }}
             >
-              بازگشت
+              Back
             </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-  
-
-            <Button onClick={handleNext}>
-       ادامه
-            </Button>
+      
           </Box>
         </React.Fragment>
       ):(
         <React.Fragment>
-        <Typography sx={{ mt: 2, mb: 1 }}>
+        <Typography sx={{ mt: 2, mb: 1 }} style={{direction:'ltr'}} >
         <FormControl className='formbox'>
-      <FormLabel id="demo-radio-buttons-group-label">لیست پروژه ها</FormLabel>
+      <FormLabel id="demo-radio-buttons-group-label" >List of projects </FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="female"
@@ -488,21 +466,22 @@ toast.success('با موفقیت آپلود شد')
     </FormControl>
           </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-       <Button
+        <Button onClick={handleNext}>
+          Continues
+          </Button>
+      
+
+
+          <Box sx={{ flex: '1 1 auto' }} />
+  
+          <Button
             color="inherit"
             disabled={activeStep === 0}
             onClick={handleBack}
             sx={{ mr: 1 }}
           >
-            بازگشت
+            Back
           </Button>
-
-
-          <Box sx={{ flex: '1 1 auto' }} />
-    <Button onClick={handleNext}>
-          ادامه
-          </Button>
-   
       
         </Box>
       </React.Fragment>
@@ -514,8 +493,22 @@ toast.success('با موفقیت آپلود شد')
 </div>
 
 </div>
+   <div className='col-md-2 col-right'>
+   <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
+          <input  type="radio" id="persian" name="fav_language" value="persian" onClick={()=>window.location.replace('/company?partnerid=1')}/>
+<label for="persian" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>فارسی</label>
+<input checked type="radio" id="en" name="fav_language" value="en" />
+<label for="en" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>English</label>
+          </div>
+          <div className='box-logo'> 
+            <img src={Logo}></img>
+          </div>
+          
+          <h6>معاونت بین الملل</h6>
+        
+        </div>
     </div>
   );
 }
 
-export default App;
+export default EnCompanyApp;
