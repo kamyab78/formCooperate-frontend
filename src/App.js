@@ -1,6 +1,6 @@
 import * as React from 'react';
 import "./App.scss";
-import Header from "./images/header.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/swiper.scss";
@@ -31,6 +31,8 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Success from './images/success.png'
+import Header from './Component/Header'
+import Footer from './Component/footer'
 const useStyles = makeStyles(theme => ({
   root: {
     margin: theme.spacing(2),
@@ -299,22 +301,25 @@ toast.success('با موفقیت آپلود شد')
 
 }
   return (
-    <div className="form-iust row">
-        <div className='col-md-2 col-right'>
-        <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-          <input checked  type="radio" id="persian" name="fav_language" value="persian" />
-<label for="persian" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>فارسی</label>
-<input  type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/enuser?partnerid=1')}/>
-<label for="en" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>English</label>
-          </div>
+    <>
+    <Header/>
+      <div className="form-iust row">
+        {/* <div className='col-md-2 col-right'>
+   
           <div className='box-logo'> 
             <img src={Logo}></img>
           </div>
           
           <h6>معاونت بین الملل</h6>
         
-        </div>
-  <div className='col-md-10 col-xs-12 col-left'>
+        </div> */}
+  <div className='col-md-12 col-xs-12 col-left'>
+  <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
+          <input checked  type="radio" id="persian" name="fav_language" value="persian" />
+<label for="persian" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>فارسی</label>
+<input  type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/enuser?partnerid=1')}/>
+<label for="en" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>English</label>
+          </div>
 <div className='row'>
   <div className='col-md-1'></div>
   <div className='col-md-10 col-xs-12 coldata'>
@@ -515,6 +520,9 @@ toast.success('با موفقیت آپلود شد')
 
 </div>
     </div>
+    <Footer/>
+    </>
+  
   );
 }
 

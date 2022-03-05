@@ -15,6 +15,7 @@ import {Navbar,NavDropdown,Nav,Container} from 'react-bootstrap'
 import 'antd/dist/antd.css';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import Headimg from '../images/header.jpeg'
 const contentStyle = {
     // height: '160px',
     color: '#fff',
@@ -40,7 +41,7 @@ function Header() {
   
     <div className='col-md-8 box-title'>
         <h1>
-            Iran and Germany Science Day
+            Iran and RUSSIA Science Day
         </h1>
     
     </div>
@@ -52,18 +53,14 @@ function Header() {
   
   <div className='col-md-8 box-num'>
       <div className='box-data'>
- <LocalPhoneIcon className='iconClass'/> 
-          <div className='col-title'>
-<h1>Call Support</h1>
-<h2>+982177240569</h2>
+   <div className='col-title'>
+          <h1>Strong ties and powerful relations between Iran and Russia can foster higher academic growth and enable faster technological advancements. </h1>
+
           </div>
       </div>
-      <div className='box-data'>
- <MailOutlineIcon className='iconClass'/> 
-          <div className='col-title'>
-          <h1>Email Support</h1>
-<h2>irde@iust.ac.ir</h2>
-          </div>
+      <div style={{width:'40%'}}>
+
+       
       </div>
       <h1>
         
@@ -72,7 +69,7 @@ function Header() {
   </div>
   <div class="col-md-4 header-logo-container">
                     <a href="#" class="custom-logo-link" rel="home" aria-current="page">
-                        <img width="315" height="136" src="https://ir-de.iust.ac.ir/storage/2018/01/cropped-cropped-Untitled-2.png" class="custom-logo" alt="Iran-Germany Science Day" srcset="https://ir-de.iust.ac.ir/storage/2018/01/cropped-cropped-Untitled-2.png 315w, https://ir-de.iust.ac.ir/storage/2018/01/cropped-cropped-Untitled-2-300x130.png 300w, https://ir-de.iust.ac.ir/storage/2018/01/cropped-cropped-Untitled-2-285x123.png 285w" sizes="(max-width: 315px) 100vw, 315px"/>
+                        <img style={{marginTop:'10px',marginRight:'10px'}} width="170" height="120" src={Headimg} class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px"/>
                         </a>       
                                  </div>
   </div>
@@ -87,20 +84,20 @@ function Header() {
     <Nav className="me-auto" style={{width:'100%'}}>
   
 
- <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="#features"> CONTACT US</Nav.Link>
-      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="#features">NEWS</Nav.Link>
+ <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/contactus"> CONTACT US</Nav.Link>
+      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/news">NEWS</Nav.Link>
       <NavDropdown    title={
         <span style={{color:'white'}}>REGISTRATION</span>
     } color='white' style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}}id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/company?partnerid=1">Company User</NavDropdown.Item>
-        <NavDropdown.Item href="/user?partnerid=1">Faculty Member</NavDropdown.Item>
+        <NavDropdown.Item href="/encompany?partnerid=1">Company</NavDropdown.Item>
+        <NavDropdown.Item href="/enuser?partnerid=1">Faculty Member</NavDropdown.Item>
         {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
       </NavDropdown>
       
-      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="#features">PARTICIPANT</Nav.Link>
-      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="#features">PROGRAM</Nav.Link>
+      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/participant">PARTICIPANT</Nav.Link>
+      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/program">PROGRAM</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/vision">VISION</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',borderLeftColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/landing">Home</Nav.Link>
     </Nav>

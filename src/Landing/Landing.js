@@ -32,7 +32,7 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import {Navbar,NavDropdown,Nav,Container} from 'react-bootstrap'
 import 'antd/dist/antd.css';
-import Firstimg from '../images/i1.jpg'
+import Firstimg from '../images/firstimg.png'
 import Secondimg from '../images/i2.jpg'
 import Thirdimg from '../images/i3.jpg'
 import Fourthimg from '../images/i4.jpg'
@@ -102,10 +102,7 @@ function App() {
   </Carousel>
   <div className='box-txt'>
 <h1>
-    Appointed by the Iranian Ministry of Science and Technology (MSRT) as Leading House for Iran-Germany Academic Collaboration, Iran University of Science and Technology (IUST) are going to organize the second Iran-Germany Science Day (IGSD) event entitled “Iran Science Day in Germany” on September 2019.
-IGSD is a bilateral scientific event on the national level according to the agreement signed between the Iranian Ministry of Science and Technology (MSRT) and the German Federal Ministry of Education and Research (BMBF) in the Joint Iranian-German Committee on Science and Technology (JSTC) in Bonn on May 2017. As a commemorative event, IGSD celebrates years of strong Science & Technology Cooperation between Iran and Germany.
-IGSD 2019 will provide an opportunity for the officials of MSRT and BMBF as well as representatives from Iranian and German governmental and private higher education bodies, universities, research institutions, and Science and Technology Parks to exchange ideas on policies and best practiced examples of their science and technology cooperation.
-The first IGSD (German Science Day in Iran) was held in IUST on 27 and 28 February 2018 and followed by the Medical part of the event in Isfahan on March 1, 2018.
+Iran University of Science and Technology (IUST)as one of the top 5 universities in Iran is going to organize the first Iran-Russian academic and industrial event through the collaboration with the highly-respected Saint-Petersburg university. This cooperation is a bilateral scientific and industrial event on the national level according to the signed agreement. As a commemorative event, this cooperation celebrates years of strong Science & Technology cooperation between Iran and Russia. This cooperation will provide an opportunity for the entrepreneurs, academics as well as representatives from Iranian and Russian governmental and private higher educational and industrial bodies, universities, research institutions, and Science and Technology Parks to exchange ideas on policies and best practices as well as participating in joint industrial and research projects. 
 
 </h1>
   </div>

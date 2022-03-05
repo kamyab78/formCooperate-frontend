@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./Vision.scss";
+import "./Program.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
@@ -45,7 +45,7 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
   };
-function App() {
+function Program() {
 
   
   
@@ -85,12 +85,11 @@ function App() {
 <img src={Firstimg}></img>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'500px'}}>
+<div className='col-md-8 col-12' style={{height:'700px'}}>
     <h1>
-    The cooperation between Iran university of science and technology and saint Petersburg university aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between Iran and Russia.    </h1>
-    <h2>
-The cooperation goal is to allow the participants to learn more about Iranian and Russian funding systems and opportunities for distinguished scientists and professors of various scientific fields, to exchange policies, ideas, achievements and challenges on previous, current and future science and technology cooperation. Moreover, this event hopes to act as a platform for doctoral and postdoctoral candidates, to engage with the Iranian and Russian research landscapes, to get meaningful insight for their future research, and feedback on existing and previous cooperation between Iran and Russia.    </h2>
-</div>
+    Program will be announced soon.   
+    </h1>
+    </div>
 <div className='col-md-2'>
 
 </div>
@@ -104,4 +103,4 @@ The cooperation goal is to allow the participants to learn more about Iranian an
   );
 }
 
-export default App;
+export default Program;

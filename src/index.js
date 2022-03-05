@@ -11,6 +11,10 @@ import Landing from './Landing/Landing'
 import Vision from './Vision/Vision'
 import EnCompanyApp from './enCompany'
 import EnApp from './enApp'
+import Participant from './Participant/Participant'
+import News from './News/News'
+import Program from './Program/Program'
+import Contactus from './Contactus/Contactus'
 ReactDOM.render(
   <React.StrictMode>
         <Router>
@@ -23,6 +27,10 @@ ReactDOM.render(
         <Route path='/encompany' element={<EnCompanyApp/>}></Route>
         <Route path='/landing' element={<Landing/>}></Route>
         <Route path='/vision' element={<Vision/>}></Route>
+        <Route path='/program' element={<Program/>}></Route>
+        <Route path='/news' element={<News/>}></Route>
+        <Route path='/contactus' element={<Contactus/>}></Route>
+        <Route path='/participant' element={<Participant/>}></Route>
           </Routes>
           </Router>
 

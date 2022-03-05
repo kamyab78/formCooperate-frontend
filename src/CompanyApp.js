@@ -1,6 +1,7 @@
 import * as React from 'react';
 import "./CompanyApp.scss";
-import Header from "./images/header.png";
+import Header from './Component/Header'
+import Footer from './Component/footer'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/swiper.scss";
@@ -307,14 +308,11 @@ toast.success('با موفقیت آپلود شد')
 //   (e)=>setfname(e.target.value)
 // }
   return (
-    <div className="form-iust row">
-        <div className='col-md-2 col-right'>
-          <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-          <input checked type="radio" id="persian" name="fav_language" value="persian" />
-<label for="persian" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>فارسی</label>
-<input type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/encompany?partnerid=1')}/>
-<label for="en" style={{marginLeft:'10px',color:'white',marginRight:'10px'}}>English</label>
-          </div>
+    <>
+    <Header/>
+       <div className="form-iust row">
+        {/* <div className='col-md-2 col-right'>
+    
        
           <div className='box-logo'> 
             <img src={Logo}></img>
@@ -322,8 +320,14 @@ toast.success('با موفقیت آپلود شد')
           
           <h6>معاونت بین الملل</h6>
         
-        </div>
-  <div className='col-md-10 col-xs-12 col-left'>
+        </div> */}
+  <div className='col-md-12 col-xs-12 col-left'>
+  <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
+          <input checked type="radio" id="persian" name="fav_language" value="persian" />
+<label for="persian" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>فارسی</label>
+<input type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/encompany?partnerid=1')}/>
+<label for="en" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>English</label>
+          </div>
 <div className='row'>
   <div className='col-md-1'></div>
   <div className='col-md-10 col-xs-12 coldata'>
@@ -517,6 +521,9 @@ toast.success('با موفقیت آپلود شد')
 
 </div>
     </div>
+    <Footer/>
+    </>
+ 
   );
 }
 

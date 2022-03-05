@@ -77,38 +77,34 @@ function Footer() {
 
   return (
     <div className="row footerpage">
-<div className='col-md-3'>
+<div className='col-md-1'>
 
 </div>
-<div className='col-md-2 borderclass' >
+<div className='col-md-3 borderclass' >
     <div className='box-footer'>
-    <h1>SHARE PRACTICE</h1>
+    <h1>Shaping the future</h1>
 <h6>
-
-IGSD are going to fostering partnerships in academic collaborations of Iranian and German participants from scientific organizations, academia and industry by providing opportunity for information exchange, sharing of the best practices among participants.
-</h6>
+Our ultimate goal is to make better future in academic and industrial collaborations between Iranian and Russian scientists and scientific organizations by indicating how they can intensify and deepen the scientific activities, in their preferably specific subject areas of interest.</h6>
 </div>
 </div>
-<div className='col-md-2 borderclass'>
+<div className='col-md-3 borderclass'>
     <div className='box-footer'>
-    <h1>TACKLE CHALLENGE</h1>
+    <h1>Creating a platform for shared activities</h1>
 <h6>
-
-IGSD are going to tackle the challenges in academic collaborations between Iranian and German scientists by preparing a platform for face to face meetings of representatives of universities, scientific organizations from both sides, in bilateral chosen areas.
+This cooperation is going to tackle the challenges in academic collaborations between Iranian and Russian scientists and entrepreneurs by preparing a platform for face to face meetings of representatives of universities, scientific organizations from both sides, in bilateral chosen areas.
     </h6>
 </div>
 </div>
-<div className='col-md-2 borderclass'>
+<div className='col-md-3 borderclass'>
     <div className='box-footer'>
-    <h1>SHAPE FUTURE</h1>
+    <h1>Industrial cooperation opportunities</h1>
 <h6>
-
-IGSD are going to make better future in academic collaborations between Iranian and German scientists and scientific organizations by indicating how they can intensify and deepen the scientific activities, in their preferably specific subject areas of interest.
+The cooperation between Iran university of science and technology and Saint Petersburg university is going to foster partnerships in industrial collaborations of Iranian and Russian participants from scientific organizations, academia and industry by providing opportunity for information exchange, sharing of the best practices among participants.
     </h6>
 </div>
 </div>
 
-<div className='col-md-3 '>
+<div className='col-md-1 '>
 
 </div>
 
