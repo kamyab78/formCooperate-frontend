@@ -15,6 +15,7 @@ import Participant from './Participant/Participant'
 import News from './News/News'
 import Program from './Program/Program'
 import Contactus from './Contactus/Contactus'
+import AboutSPbU from './AboutSpbu/AboutSpbu'
 ReactDOM.render(
   <React.StrictMode>
         <Router>
@@ -31,6 +32,7 @@ ReactDOM.render(
         <Route path='/news' element={<News/>}></Route>
         <Route path='/contactus' element={<Contactus/>}></Route>
         <Route path='/participant' element={<Participant/>}></Route>
+        <Route path='/aboutSPbU' element={<AboutSPbU/>}></Route>
           </Routes>
           </Router>
 

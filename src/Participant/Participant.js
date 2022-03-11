@@ -81,13 +81,15 @@ function Participant() {
   return (
       <> 
        <Header/> 
-    <div className="row visionPage">
+    <div className="row participant">
+    <div className='col-12' style={{height:'500px'}}>
 <img src={Firstimg}></img>
+      </div>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'700px'}}>
+<div className='col-md-8 col-12' style={{height:'400px'}}>
     <h1>
-    Participant will be announced soon.   
+    Participant will be announced soon ......   
     </h1>
     </div>
 <div className='col-md-2'>

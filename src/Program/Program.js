@@ -81,13 +81,15 @@ function Program() {
   return (
       <> 
        <Header/> 
-    <div className="row visionPage">
+    <div className="row programm">
+    <div className='col-12' style={{height:'500px'}}>
 <img src={Firstimg}></img>
+      </div>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'700px'}}>
+<div className='col-md-8 col-12' style={{height:'400px'}}>
     <h1>
-    Program will be announced soon.   
+    Program will be announced soon ...   
     </h1>
     </div>
 <div className='col-md-2'>

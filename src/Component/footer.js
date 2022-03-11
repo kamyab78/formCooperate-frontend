@@ -91,18 +91,36 @@ Our ultimate goal is to make better future in academic and industrial collaborat
     <div className='box-footer'>
     <h1>Creating a platform for shared activities</h1>
 <h6>
-This cooperation is going to tackle the challenges in academic collaborations between Iranian and Russian scientists and entrepreneurs by preparing a platform for face to face meetings of representatives of universities, scientific organizations from both sides, in bilateral chosen areas.
-    </h6>
+The cooperation goal is to allow the participants to learn more about Iranian and Russian funding systems and opportunities for distinguished scientists and professors of various scientific fields, to exchange policies, ideas, achievements and challenges on previous, current and future science and technology cooperation. Moreover, this event hopes to act as a platform for doctoral and postdoctoral candidates, to engage with the mutually defined research landscapes, to get meaningful insight for their future research, and feedback on existing and previous cooperation between the two universities.    </h6>
 </div>
 </div>
 <div className='col-md-3 borderclass'>
     <div className='box-footer'>
     <h1>Industrial cooperation opportunities</h1>
 <h6>
-The cooperation between Iran university of science and technology and Saint Petersburg university is going to foster partnerships in industrial collaborations of Iranian and Russian participants from scientific organizations, academia and industry by providing opportunity for information exchange, sharing of the best practices among participants.
-    </h6>
+The cooperation between Iran university of science and technology and saint Petersburg university aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between these two universities.     </h6>
 </div>
 </div>
+
+<div className='col-md-1 '>
+
+</div>
+
+
+
+<div className='col-md-2'>
+
+</div>
+
+<div className='col-md-10 '>
+    <div className='box-footer'>
+    
+<h6 style={{color:'#FFFFFFB3',direction:'ltr',textAlign:'center'}}>
+© Iran university of science and technology - All Rights Reserved.    
+</h6>
+</div>
+</div>
+
 
 <div className='col-md-1 '>
 

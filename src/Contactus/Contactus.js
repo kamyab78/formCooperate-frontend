@@ -36,6 +36,7 @@ import Firstimg from '../images/i1.jpg'
 import Secondimg from '../images/i2.jpg'
 import Thirdimg from '../images/i3.jpg'
 import Fourthimg from '../images/i4.jpg'
+import Mapimg from '../images/map.png'
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
 const contentStyle = {
@@ -46,47 +47,74 @@ const contentStyle = {
     background: '#364d79',
   };
 function Contactus() {
-
-  
-  
-  const [imageUploader, setImageUploader] = useState(null)
-
-  const [categorySelected, setCategorySelected] = useState();
-  const [category, setpst] = useState([]);
-  const [projectList, setprojectList] = useState([]);
-  const [partnerdet,setpartnerdet]=useState({})
-  const [Detailproject,setDetailproject]=useState({})
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [projectid,setprojectid]=useState(null)
-  const [partnerid,setpartnerid]=useState(null)
-  const [skipped, setSkipped] = React.useState(new Set());
-  const [fname, setfname] = useState(null);
-  const [lname, setlname] = useState(null);
-  const [phone, setphone] = useState(null);
-  const [email, setemail] = useState(null);
-  const [degree, setdegree] = useState(null);
-  const [workexp, setworkexp] = useState(null);
-  const [supportdes, setsupportdes] = useState(null);
-  const [expdes, setexpdes] = useState(null);
-  const uploadRef = useRef(null)
-
-
-
+  const [subject, setsubject] = useState(null)
+  const [txt, settxt] = useState();
   useEffect(() => {
 
   }, []);
 
+function sendmail(){
+  const body= {
+   
+    "subject":subject,
+ 
+    "text":txt
+   
+}
+  var requestOptions = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': '*/*',
+        // "Authorization": "Basic " + window.localStorage.getItem('basic')
 
+    },
+    body:JSON.stringify(body)
+
+
+};
+
+fetch(Config()['api'] + "/user/sendmail", requestOptions)
+    .then(response => {
+
+
+if(response.status===200){
+  toast.success('Successfully send')
+}
+        // response.json().then(rep => {
+        //     console.log(rep)
+        //     if(rep.code===200){
+        //            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        //     }
+       
+        // })
+
+
+
+
+
+    })
+    .catch(error => console.log('error', error));
+
+}
 
   return (
       <> 
        <Header/> 
-    <div className="row visionPage">
+    <div className="row contactUs">
+      <div className='col-12' style={{height:'600px'}}>
 <img src={Firstimg}></img>
+      </div>
+
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'600px'}}>
-    <h1>
+<div className='col-md-8 col-12 ' style={{height:'600px'}}>
+  <div className='title'>
+      <h3 >About Us</h3>
+  </div>
+  <div style={{display:'flex',flexDirection:'row-reverse'}}>
+<div className='boxleft'>
+      <h1>
     Iran University of Science & Technology
       </h1>
       <h6>
@@ -107,6 +135,12 @@ function Contactus() {
       <h6>
       Email: iscp@iust.ac.ir
       </h6>
+  </div>
+<div className='boxright'>
+<img src={Mapimg}></img>
+</div>
+  </div>
+
 
 
 
@@ -121,6 +155,43 @@ function Contactus() {
 </div>
 
 
+
+<div className='col-md-2'>
+</div>
+<div className='col-md-8 col-12 '>
+  <div className='title'>
+      <h3 >Contact Us</h3>
+  </div>
+  <div >
+  
+<div className='boxinp'>
+<div className='inpbox'>
+    <h6>Subject</h6>
+    <input value={subject} onChange={(e)=>setsubject(e.target.value)}/>
+    </div>
+    <div className='inpbox'>
+    <h6>Text</h6>
+    <textarea value={txt} onChange={(e)=>settxt(e.target.value)}/>
+    </div>
+    <div className='btnbox'>
+   <button onClick={sendmail}>Submit</button>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  
+    </div>
+<div className='col-md-2'>
+
+</div>
 </div>
 <Footer/>
       </>

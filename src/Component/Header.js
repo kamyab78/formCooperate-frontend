@@ -41,7 +41,7 @@ function Header() {
   
     <div className='col-md-8 box-title'>
         <h1>
-            Iran and RUSSIA Science Day
+        IUST-Saint Petersburg Cooperation
         </h1>
     
     </div>
@@ -54,7 +54,7 @@ function Header() {
   <div className='col-md-8 box-num'>
       <div className='box-data'>
    <div className='col-title'>
-          <h1>Strong ties and powerful relations between Iran and Russia can foster higher academic growth and enable faster technological advancements. </h1>
+          <h1>STRONG TIES AND POWERFUL RELATIONS BETWEEN IRAN UNIVERSITY OF SCIENCE AND TECHNOLOGY AND SAINT PETERSBURG UNIVERISITY CAN FOSTER HIGHER ACADEMIC GROWTH AND ENABLE FASTER TECHNOLOGICAL ADVANCEMENTS.</h1>
 
           </div>
       </div>
@@ -85,6 +85,8 @@ function Header() {
   
 
  <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/contactus"> CONTACT US</Nav.Link>
+
+ <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/aboutSPbU">ABOUT SPbU</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/news">NEWS</Nav.Link>
       <NavDropdown    title={
         <span style={{color:'white'}}>REGISTRATION</span>
