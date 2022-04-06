@@ -235,7 +235,7 @@ function submit(){
 
 };
 
-fetch(Config()['api'] + "/user/instituteuser?partnerId=" + partnerid+"&projectid="+projectid, requestOptions)
+fetch(Config()['api'] + "/user/companyuser?partnerId=" + partnerid+"&projectid="+projectid, requestOptions)
     .then(response => {
 
 
