@@ -13,16 +13,32 @@ $whitef5:#f5f5f5;
         // object-fit: cover;
     }
     .box-txt{
-        h1{
-            direction: ltr;
-            font-size: 16px;
-            text-align: justify;
-            margin: 90px;
-            margin-right: 190px;
-            margin-left: 190px;
-            line-height: 24px;
-            font-weight: normal;
-            margin-bottom: 100px;
+   
+        @media (max-width: 575.98px) {
+            h1{
+                direction: ltr;
+                font-size: 16px;
+                text-align: justify;
+                margin: 90px;
+                // margin-right: 190px;
+                // margin-left: 190px;
+                line-height: 24px;
+                font-weight: normal;
+                margin-bottom: 100px;
+            }
+        }
+        @media (min-width: 575.98px) {
+            h1{
+                direction: ltr;
+                font-size: 16px;
+                text-align: justify;
+                margin: 90px;
+                margin-right: 190px;
+                margin-left: 190px;
+                line-height: 24px;
+                font-weight: normal;
+                margin-bottom: 100px;
+            }
         }
     }
 }

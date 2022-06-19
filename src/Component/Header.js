@@ -58,13 +58,7 @@ function Header() {
 
           </div>
       </div>
-      <div style={{width:'40%'}}>
-
-       
-      </div>
-      <h1>
-        
-      </h1>
+ 
   
   </div>
   <div class="col-md-4 header-logo-container">

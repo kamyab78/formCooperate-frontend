@@ -88,7 +88,7 @@ function App() {
       </div>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'450px'}}>
+<div className='col-md-8 col-12' >
     <h1>
     The cooperation between Iran university of science and technology and saint Petersburg university aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between Iran and Russia.    </h1>
     <h2>

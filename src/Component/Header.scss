@@ -40,10 +40,13 @@
     width: 42px; 
     height: 0; 
   }
-  .logo_info_wrap .header-logo-container, .logo_info_wrap .site-branding {
+
+  .header-logo-container {
   
     float: left;
+ 
 }
+
 .box-num{
     display: flex;
     flex-direction: row;
@@ -82,6 +85,20 @@
         }
     }
 }  
+}
+@media (max-width: 575.98px) {
+  .box-num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .header-logo-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 }
