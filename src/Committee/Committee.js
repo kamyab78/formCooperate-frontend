@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./Event.scss";
+import "./Committee.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
@@ -38,8 +38,6 @@ import Thirdimg from '../images/i3.jpg'
 import Fourthimg from '../images/i4.jpg'
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
-import FirstImgEvent from '../images/firstimageevent.jpeg'
-import SecondImgEvent from '../images/secondimageevent.jpg'
 const contentStyle = {
     // height: '160px',
     color: '#fff',
@@ -47,7 +45,7 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
   };
-function Event() {
+function Committee() {
 
   
   
@@ -83,45 +81,30 @@ function Event() {
   return (
       <> 
        <Header/> 
-    <div className="row participant">
+    <div className="row committee">
     <div className='col-12' style={{height:'500px'}}>
 <img src={Firstimg}></img>
       </div>
 <div className='col-md-2'>
 </div>
 <div className='col-md-8 col-12' >
-  <div className='row'>
-    <div className='col-xs-12 col-md-6'>
-      <div className='box-item'>
-  <img src={FirstImgEvent}></img>
-  <div className='text'>
-<h1>
-نشست برنامه ریزی گروه 5 دانشگاه صنعتی کشور (یو تی فایو) برای همکاری با دانشگاه سنت پترزبورگ
-</h1>
-<h2>
-در این نشست که نمایندگان دانشگاه های علم وصنعت ایران صنهتی شریف صنهتعتی امیر کبیر صنعتی اصفهان و صنعتی خواجه نصیرالدین طوسی و رییس محترم کارگروه همکاریهای فناوری دانشگاهی با فدراسیون روسیه مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری  برگزار شد در خصوص نحوه همکاری دانشگا های کشور با دانشگاه های صنعتی سن پترزبورگ بحث شد.
-</h2>
-  </div>
+    <h1>
+    Steering Committee
+    </h1>
+    <h1>
 
-  </div>
-    </div>
-    <div className='col-xs-12 col-md-6'>
-      
-  <div className='box-item'>
-    <img src={SecondImgEvent}></img>
-    <div className='text'>
-<h1>
-برنامه ریزی بین دو دانشگاه
-IUST-SPbPU
-</h1>
-<h2>
-این رخداد در حال برگزاری می باشد
-</h2>
-</div>
-  </div>
-  </div>
-  </div>
+Program Committee
 
+    </h1>
+    <h1>
+
+Executive Committee
+
+    </h1>
+    <h1>
+
+Subjective Committees :  Bio-Tech / ICT / Energy / New Material 
+    </h1>
     </div>
 <div className='col-md-2'>
 
@@ -136,4 +119,4 @@ IUST-SPbPU
   );
 }
 
-export default Event;
+export default Committee;

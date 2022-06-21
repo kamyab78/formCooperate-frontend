@@ -33,11 +33,13 @@ import TextField from '@mui/material/TextField';
 import {Navbar,NavDropdown,Nav,Container} from 'react-bootstrap'
 import 'antd/dist/antd.css';
 import Firstimg from '../images/i1.jpg'
-import Secondimg from '../images/i2.jpg'
-import Thirdimg from '../images/i3.jpg'
-import Fourthimg from '../images/i4.jpg'
+
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
+import FirstImg from '../images/firstimageevent.jpeg'
+import SecondImg from '../images/secondimageevent.jpg'
+import Fourthimg from '../images/fourthimg.jpg'
+import Thirdimg from '../images/thirdimg.jpeg'
 const contentStyle = {
     // height: '160px',
     color: '#fff',
@@ -87,10 +89,72 @@ function News() {
       </div>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'400px'}}>
+<div className='col-md-8 col-12'>
+<div className='row'>
+
+
+    <div className='col-xs-12 col-md-6'>
+      <div className='box-item'>
+  <img src={FirstImg}></img>
+  <div className='text'>
+<h1>
+برگزاری نشست مشترک دانشگاه علم و صنعت ایران و  مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری
+</h1>
+<h2>
+این نشست در تاریخ 10 مرداد 1401 در محل مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری با حضور  نمایندگان دو طرف برای برنامه ریزی برای همکاری های دانشگاهی با دانشگاه پلی تکنیک سن پتر بورگ برگزار شد ....
+</h2>
+  </div>
+
+  </div>
+    </div>
+
+
+    <div className='col-xs-12 col-md-6'>
+      
+  <div className='box-item'>
+    <img src={SecondImg}></img>
+    <div className='text'>
+<h1>
+جلسه کمیته برنامه ریزی ارتباطات فناورانه دانشگاهبی دانشگاه های صنعتی و دانشگاه پلی تکنیک سن پترزبورگ
+</h1>
+<h2>
+جلسه مشترک مدیران جلسه مشترک مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری  و  دانشگاه علم  صنعت ایران در اریخ 7 مهر ماه 1401 در سالن کنفرانس معاونت یبن الملل دانشگاه برگزار شد
+</h2>
+</div>
+  </div>
+  </div>
+
+  <div className='col-xs-12 col-md-6'>
+      
+      <div className='box-item'>
+        <img src={Thirdimg}></img>
+        <div className='text'>
     <h1>
-    News will be announced soon ...... 
+    فراخوان همکاری اعضای هیات علمی علاقه مند به پشتیبانی بین المللی و علمی شرکت های دانش بنیان
     </h1>
+    <h2>
+   </h2>
+    </div>
+      </div>
+      </div>
+
+
+      <div className='col-xs-12 col-md-6'>
+      
+      <div className='box-item'>
+        <img src={Fourthimg}></img>
+        <div className='text'>
+    <h1>
+    راه‌اندازی مرکز مشترک فناوری ایران و روسیه؛ تولید محصولات مشترک توسعه می‌یابد
+    </h1>
+    <h2>
+    در قالب این مرکز تاکنون  17 پروژه از طرف شرکت‌های دانش‌بنیان ایرانی و 5 پروژه از سوی شرکت‌های فناور روسی شناسایی و تناظریابی شد که در حال حاضر 7 پروژه از مجموع این پروژه‌ها در مرحله عقد قرارداد برای خرید، انتقال و صادرات فناوری و همچنین تولید مشترک در ایران است.
+
+فعالیت‌های این مرکز محدود به دانشگاه پلی تکنیک سن‌پترزبورگ نیست و این دانشگاه نقش راهبری و معرفی ظرفیت‌های حوزه‌های مختلف فناوری و صنعتی روسیه را عهده‌دار اشت.    </h2>
+    </div>
+      </div>
+      </div>
+  </div>
     </div>
 <div className='col-md-2'>
 
