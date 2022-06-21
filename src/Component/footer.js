@@ -91,7 +91,7 @@ Our ultimate goal is to make better future in academic and industrial collaborat
     <div className='box-footer'>
     <h1>Creating a platform for shared activities</h1>
 <h6>
-The cooperation goal is to allow the participants to learn more about Iranian and Russian funding systems and opportunities for distinguished scientists and professors of various scientific fields, to exchange policies, ideas, achievements and challenges on previous, current and future science and technology cooperation. Moreover, this event hopes to act as a platform for doctoral and postdoctoral candidates, to engage with the mutually defined research landscapes, to get meaningful insight for their future research, and feedback on existing and previous cooperation between the two universities.    </h6>
+The cooperation goal is to allow the participants to learn more about Iranian and Russian funding systems and opportunities for distinguished scientists and professors of various scientific fields, to exchange policies, ideas, achievements and challenges on previous, current and future science and technology cooperation.</h6>
 </div>
 </div>
 <div className='col-md-3 borderclass'>

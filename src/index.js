@@ -11,7 +11,7 @@ import Landing from './Landing/Landing'
 import Vision from './Vision/Vision'
 import EnCompanyApp from './enCompany'
 import EnApp from './enApp'
-import Participant from './Participant/Participant'
+import Event from './Event/Event'
 import News from './News/News'
 import Program from './Program/Program'
 import Contactus from './Contactus/Contactus'
@@ -31,7 +31,7 @@ ReactDOM.render(
         <Route path='/program' element={<Program/>}></Route>
         <Route path='/news' element={<News/>}></Route>
         <Route path='/contactus' element={<Contactus/>}></Route>
-        <Route path='/participant' element={<Participant/>}></Route>
+        <Route path='/event' element={<Event/>}></Route>
         <Route path='/aboutSPbU' element={<AboutSPbU/>}></Route>
           </Routes>
           </Router>

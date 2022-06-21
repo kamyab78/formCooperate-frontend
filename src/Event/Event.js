@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./Participant.scss";
+import "./Event.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
@@ -38,6 +38,7 @@ import Thirdimg from '../images/i3.jpg'
 import Fourthimg from '../images/i4.jpg'
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
+import FirstImgEvent from '../images/firstimageevent.jpeg'
 const contentStyle = {
     // height: '160px',
     color: '#fff',
@@ -45,7 +46,7 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
   };
-function Participant() {
+function Event() {
 
   
   
@@ -87,10 +88,39 @@ function Participant() {
       </div>
 <div className='col-md-2'>
 </div>
-<div className='col-md-8 col-12' style={{height:'400px'}}>
-    <h1>
-    Participant will be announced soon ......   
-    </h1>
+<div className='col-md-8 col-12' >
+  <div className='row'>
+    <div className='col-xs-12 col-md-6'>
+      <div className='box-item'>
+  <img src={FirstImgEvent}></img>
+  <div className='text'>
+<h1>
+نشست برنامه ریزی گروه 5 دانشگاه صنعتی کشور (یو تی فایو) برای همکاری با دانشگاه سنت پترزبورگ
+</h1>
+<h2>
+در این نشست که نمایندگان دانشگاه های علم وصنعت ایران صنهتی شریف صنهتعتی امیر کبیر صنعتی اصفهان و صنعتی خواجه نصیرالدین طوسی و رییس محترم کارگروه همکاریهای فناوری دانشگاهی با فدراسیون روسیه مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری  برگزار شد در خصوص نحوه همکاری دانشگا های کشور با دانشگاه های صنعتی سن پترزبورگ بحث شد.
+</h2>
+  </div>
+
+  </div>
+    </div>
+    <div className='col-xs-12 col-md-6'>
+      
+  <div className='box-item'>
+    <img src={FirstImgEvent}></img>
+    <div className='text'>
+<h1>
+برنامه ریزی بین دو دانشگاه
+IUST-SPbPU
+</h1>
+<h2>
+این رخداد در حال برگزاری می باشد
+</h2>
+</div>
+  </div>
+  </div>
+  </div>
+
     </div>
 <div className='col-md-2'>
 
@@ -105,4 +135,4 @@ function Participant() {
   );
 }
 
-export default Participant;
+export default Event;
