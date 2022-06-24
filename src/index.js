@@ -16,7 +16,10 @@ import News from './News/News'
 import Program from './Program/Program'
 import Contactus from './Contactus/Contactus'
 import AboutSPbU from './AboutSpbu/AboutSpbu'
-import Committee from './Committee/Committee'
+import ExecutiveCommittee from "./Committee/ExecutiveCommittee/ExecutiveCommittee";
+import SteeringCommittee from "./Committee/SteeringCommittee/SteeringCommittee";
+import ProgramCommittee from "./Committee/ProgramCommittee/ProgramCommittee";
+
 ReactDOM.render(
   <React.StrictMode>
         <Router>
@@ -34,7 +37,10 @@ ReactDOM.render(
         <Route path='/contactus' element={<Contactus/>}></Route>
         <Route path='/event' element={<Event/>}></Route>
         <Route path='/aboutSPbU' element={<AboutSPbU/>}></Route>
-        <Route path='/committee' element={<Committee/>}></Route>
+        <Route path='/SteeringCommittee' element={<SteeringCommittee/>}></Route>
+        <Route path='/ProgramCommittee' element={<ProgramCommittee/>}></Route>
+        <Route path='/ExecutiveCommittee' element={<ExecutiveCommittee/>}></Route>
+
           </Routes>
           </Router>
 
