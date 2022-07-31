@@ -88,37 +88,37 @@ function AboutSPbU() {
 </div>
 <div className='col-md-8 col-12 '>
   <div className='title'>
-      <h3 >About San Petersburg </h3>
+      <h3 >About  Peter the Great St.Petersburg Polytechnic University </h3>
   </div>
 
     <h1>
-    St Petersburg University is truly global. That means, every 6th student is international. Compared to last year, the international student number increased from 4640 by 14% even despite the global pandemic. Also, 3 new countries joined the international student body of SPbU this year.
-  </h1>
+    Welcome to St. Petersburg and Peter the Great St. Petersburg Polytechnic University! Our University’s position as a world-class University is confirmed by world rankings: 11th among the top 100 Russia’s universities , 43rd THE Best universities in Europe, 5 stars in international QS ranking for online learning. SPbPU has always been among the leaders of higher education in Russia. For the recent years we take the TOP-3 position among Russian technical universities by number of international students.  </h1>
 
 <h2>
-    international students from 117 countries following degree and non-degree students
+Our university is a winner of the Research Leadership track of the Federal academic leadership program “Priority 2030”.
+</h2>
+<h2>
+Our university is situated in one of the most beautiful cities in the world! The second largest city in Russia, St. Petersburg is rightfully called the cultural capital of Russia. A metropolitan city of five million people, it every year attracts nearly seven million tourists, of which about one half are foreign guests coming from all over the world. St. Petersburg was founded by the first Emperor of Russia, Tsar Peter the Great, as a multicultural city, always welcoming guests and specialists from other countries. Polytechnic University retains and strengthens this tradition which has become one of the essential features of our University. More than 8500 foreign students study at our university and this number keeps growing every year.
+
 
 </h2>
 <h2>
-According to Rossotrudnichestvo SPbU was named the most popular university in Russia among foreign applicants.
-
+Peter the Great St. Petersburg Polytechnic University, more habitually known in Russia and abroad as the St. Petersburg Polytechnic Institute, was founded in 1899 on the wave of economic and political successes of Russia. It was built as a university campus to the northwest from the then city borders. While now the university is an integral part of St. Petersburg, it still is located in the greenest district of the city with good transportation connections to the historical center of St. Petersburg and other districts of the city.
 </h2>
-<h2>
-In 2021, the University is in even greater demand from applicants from abroad than before. A record number of foreign citizens have taken part in the competitive selection to enter St Petersburg University. Out of 21,000 applicants, 1,900 applicants from 74 countries have become students of St Petersburg University. 
 
-</h2>
-<h2>
-The University makes it easy to connect with the whole world by Representative offices in China, Republic of Korea, Spain, Greece, Italy and Turkey shortly on the way.
 
+<h2>
+For more than a century, the history and glory of Polytechnic University was created by the people who had taught and studied here, including Nobel Prize winners P.L. Kapitsa, N.N. Semyonov, Z.I. Alferov, famous physicists A.F. Ioffe, I.V. Kurchatov, A.A. Radzig, Y.B. Khariton, Constuctor General O.A. Antonov, and many other talented and famous scientists.
 </h2>
 
 <h2>
-Students coming from abroad are attracted by SPbU exceptional educational standards, an opportunity to study in Russian, English as well as other foreign languages, global research and career prospects. Spending student years in the cultural capital of Russia, which received the title of “Europe’s Leading City Destination” in World Travel Awards 2020, is also seen as a great advantage. 
+Polytechnic University has a very prominent place in the global academic community. The University is partner with many academic institutions and industrial companies. More than 320 partner universities from 70 countries, over 100 world's leading companies have direct contracts with Polytechnic University. Annually, the University hosts numerous high-level international symposiums and conferences, publishes tens of scientific magazines and scholarly books.
+
 
 </h2>
 
     <div style={{marginTop:'30px',marginBottom:'30px'}}>
-   <img src={Secondimg} className='secondimg'></img>
+   {/* <img src={Secondimg} className='secondimg'></img> */}
     </div>
   
 

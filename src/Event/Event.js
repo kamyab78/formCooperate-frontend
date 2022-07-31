@@ -38,8 +38,8 @@ import Thirdimg from '../images/i3.jpg'
 import Fourthimg from '../images/i4.jpg'
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
-import FirstImgEvent from '../images/firstimageevent.jpeg'
-import SecondImgEvent from '../images/secondimageevent.jpg'
+import FirstImgEvent from '../images/ut5.png'
+import SecondImgEvent from '../images/2tae.png'
 const contentStyle = {
     // height: '160px',
     color: '#fff',

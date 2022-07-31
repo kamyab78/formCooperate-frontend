@@ -90,7 +90,7 @@ function App() {
 </div>
 <div className='col-md-8 col-12' >
     <h1>
-    The cooperation between Iran university of science and technology and saint Petersburg university aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between Iran and Russia.    </h1>
+    The cooperation between Iran university of science and technology and  Peter the Great St.Petersburg Polytechnic University aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between Iran and Russia.    </h1>
     <h2>
 The cooperation goal is to allow the participants to learn more about Iranian and Russian funding systems and opportunities for distinguished scientists and professors of various scientific fields, to exchange policies, ideas, achievements and challenges on previous, current and future science and technology cooperation. Moreover, this event hopes to act as a platform for doctoral and postdoctoral candidates, to engage with the Iranian and Russian research landscapes, to get meaningful insight for their future research, and feedback on existing and previous cooperation between Iran and Russia.    </h2>
 </div>

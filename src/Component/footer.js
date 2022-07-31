@@ -98,7 +98,7 @@ The cooperation goal is to allow the participants to learn more about Iranian an
     <div className='box-footer'>
     <h1>Industrial cooperation opportunities</h1>
 <h6>
-The cooperation between Iran university of science and technology and saint Petersburg university aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between these two universities.     </h6>
+The cooperation between Iran university of science and technology and  Peter the Great St.Petersburg Polytechnic University aims to promote interdisciplinary and joint research activities and to intensify the exchange in scientific and industrial research between these two universities.     </h6>
 </div>
 </div>
 

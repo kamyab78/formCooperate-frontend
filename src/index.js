@@ -33,7 +33,7 @@ ReactDOM.render(
         <Route path='/news' element={<News/>}></Route>
         <Route path='/contactus' element={<Contactus/>}></Route>
         <Route path='/event' element={<Event/>}></Route>
-        <Route path='/aboutSPbU' element={<AboutSPbU/>}></Route>
+        <Route path='/aboutSPbPU' element={<AboutSPbU/>}></Route>
         <Route path='/committee' element={<Committee/>}></Route>
           </Routes>
           </Router>

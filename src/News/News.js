@@ -36,8 +36,8 @@ import Firstimg from '../images/i1.jpg'
 
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
-import FirstImg from '../images/firstimageevent.jpeg'
-import SecondImg from '../images/secondimageevent.jpg'
+import FirstImg from '../images/news1.jpg'
+import SecondImg from '../images/poly1.jpg'
 import Fourthimg from '../images/fourthimg.jpg'
 import Thirdimg from '../images/thirdimg.jpeg'
 const contentStyle = {
@@ -115,7 +115,7 @@ function News() {
     <img src={SecondImg}></img>
     <div className='text'>
 <h1>
-جلسه کمیته برنامه ریزی ارتباطات فناورانه دانشگاهبی دانشگاه های صنعتی و دانشگاه پلی تکنیک سن پترزبورگ
+جلسه کمیته برنامه ریزی ارتباطات فناورانه دانشگاهی دانشگاه های صنعتی و دانشگاه پلی تکنیک سنت پترزبورگ
 </h1>
 <h2>
 جلسه مشترک مدیران جلسه مشترک مرکز تعاملات بین المللی علم و فناوری معاونت علمی و فناوری ریاست جمهوری  و  دانشگاه علم  صنعت ایران در اریخ 7 مهر ماه 1401 در سالن کنفرانس معاونت یبن الملل دانشگاه برگزار شد

@@ -15,7 +15,8 @@ import {Navbar,NavDropdown,Nav,Container} from 'react-bootstrap'
 import 'antd/dist/antd.css';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import Headimg from '../images/header.jpeg'
+// import Headimg from '../images/header.jpeg'
+import Headimg from '../images/2tae.png'
 import Jomhori from '../images/jomhori.png'
 const contentStyle = {
     // height: '160px',
@@ -42,7 +43,7 @@ function Header() {
   
     <div className='col-md-8 box-title'>
         <h1>
-        IUST-Saint Petersburg Cooperation
+        IUST-SPbPU
         </h1>
     
     </div>
@@ -55,7 +56,7 @@ function Header() {
   <div className='col-md-8 box-num'>
       <div className='box-data'>
    <div className='col-title'>
-          <h1>STRONG TIES AND POWERFUL RELATIONS BETWEEN IRAN UNIVERSITY OF SCIENCE AND TECHNOLOGY AND SAINT PETERSBURG UNIVERISITY CAN FOSTER HIGHER ACADEMIC GROWTH AND ENABLE FASTER TECHNOLOGICAL ADVANCEMENTS.</h1>
+          <h1>STRONG TIES AND POWERFUL RELATIONS BETWEEN IRAN UNIVERSITY OF SCIENCE AND TECHNOLOGY AND PETER the Great St.Petersburg Polytechnic University CAN FOSTER HIGHER ACADEMIC GROWTH AND ENABLE FASTER TECHNOLOGICAL ADVANCEMENTS.</h1>
 
           </div>
       </div>
@@ -63,7 +64,7 @@ function Header() {
   
   </div>
   <div class="col-md-4 header-logo-container">
-                    <a href="#" class="custom-logo-link" rel="home" aria-current="page">
+                    <a href="/landing" class="custom-logo-link" rel="home" aria-current="page">
                         <img style={{marginTop:'10px',marginRight:'10px'}} width="170" height="120" src={Headimg} class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px"/>
                         <img style={{marginTop:'10px',marginRight:'10px'}}height="130" class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px" src={Jomhori}></img>
                         </a>       
@@ -82,7 +83,7 @@ function Header() {
 
  <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/contactus"> CONTACT US</Nav.Link>
 
- <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/aboutSPbU">ABOUT SPbU</Nav.Link>
+ <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/aboutSPbPU">ABOUT SPbPU</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/news">NEWS</Nav.Link>
       <NavDropdown    title={
         <span style={{color:'white'}}>REGISTRATION</span>
