@@ -96,7 +96,14 @@ function Header() {
       </NavDropdown>
       
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/event">EVENT</Nav.Link>
-      <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/committee">COMMITTEE</Nav.Link>
+      <NavDropdown    title={
+        <span style={{color:'white'}}>COMMITTEE</span>
+    } color='white' style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}}id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/SteeringCommittee">Steering Committee</NavDropdown.Item>
+        <NavDropdown.Item href="/ProgramCommittee">Program Committee</NavDropdown.Item>
+        <NavDropdown.Item href="/ExecutiveCommittee">Executive Committee</NavDropdown.Item>
+     
+      </NavDropdown>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/program">PROGRAM</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/vision">VISION</Nav.Link>
       <Nav.Link style={{color:'white',borderStyle:'solid',borderWidth:'1px',width:'100%',borderTopColor:'transparent',borderBottomColor:'transparent',borderLeftColor:'transparent',height:'30px',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10px',marginBottom:'5px'}} href="/landing">HOME</Nav.Link>
