@@ -1,7 +1,6 @@
 import * as React from 'react';
-import "./CompanyApp.scss";
-import Header from './Component/Header'
-import Footer from './Component/footer'
+import "./enCompany.scss";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/swiper.scss";
@@ -32,6 +31,8 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Success from './images/success.png'
+import Header from './Component/Header'
+import Footer from './Component/footer'
 const useStyles = makeStyles(theme => ({
   root: {
     margin: theme.spacing(2),
@@ -59,20 +60,47 @@ function CompanyApp() {
   const [projectid,setprojectid]=useState(null)
   const [partnerid,setpartnerid]=useState(null)
   const [skipped, setSkipped] = React.useState(new Set());
-  const [fname, setfname] = useState(null);
-
-  const [phone, setphone] = useState(null);
+  const [name, setname] = useState(null);
+  const [address, setaddress] = useState(null);
+  const [contactnumber, setcontactnumber] = useState(null);
   const [email, setemail] = useState(null);
-
-  const [workexp, setworkexp] = useState(null);
-  const [supportdes, setsupportdes] = useState(null);
-  const [expdes, setexpdes] = useState(null);
+  const [website, setwebsite] = useState(null);
+  const [domain, setdomain] = useState(null);
+  const [expertise, setexpertise] = useState(null);
+  const [consultinghours, setconsultinghours] = useState(null);
+  const [researchinfrastructure, setresearchinfrastructure] = useState(null);
   const uploadRef = useRef(null)
   const handleNext = () => {
-    if(projectid===null){
-      toast.error('یک پروژه را انتخاب کنید')
-    return
+    if(activeStep === 0){
+      if(name === null){
+        toast.error('اسم را پر کنید')
+        return
+      }
+      if(address === null){
+        toast.error('آدرس را پر کنید')
+        return
+      }
+      if(contactnumber === null){
+        toast.error('شماره را پر کنید')
+        return
+      }
+      if(email === null){
+        toast.error('ایمیل را پر کنید')
+        return
+      }
+      if(website === null){
+        toast.error('وبسایت را پر کنید')
+        return
+      }
+      if(domain === null){
+        toast.error('حوزه فعالیت را پر کنید')
+        return
+      }
     }
+    // if(projectid===null){
+    //   toast.error('Choose a project')
+    // return
+    // }
     let newSkipped = skipped;
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -184,42 +212,36 @@ fetch(Config()['api'] + "/user/projectdetail?partnerId=" + partnerid+"&projectId
     .catch(error => console.log('error', error));
    }, [projectid]);
 function submit(){
-  if(fname===null){
-    toast.error('نام را پر کنید')
+  if(expertise===null){
+    toast.error('تجربه و تخصص را پر کنید')
     return
   }
 
-  if(phone===null){
-    toast.error('تلفن را پر کنید')
+  if(consultinghours===null){
+    toast.error('ساعات مشاوره را پر کنید')
     return
   }
-  if(email===null){
-    toast.error('ایمیل را پر کنید')
+  if(researchinfrastructure===null){
+    toast.error('زیرساخت های تحقیقاتی را پر کنید')
     return
   }
-  if(workexp===null){
-    toast.error('سابقه کاری را پر کنید')
-    return
-  }
-  if(supportdes===null){
-    toast.error('نحوه پشتیبانی را پر کنید')
-    return
-  }
-  if(expdes===null){
-    toast.error('سوابق کاری را پر کنید')
+  if(projectid===null){
+    toast.error('پروژه را انتخاب کنید')
     return
   }
   const body= {
    
-    "name":fname,
+    "name":name,
  
-    "phone":phone,
+    "address":address,
     "email":email,
 
-    "workexp":workexp,
-    "supportdes":supportdes,
-    "hourdes":expdes,
-    "path":imageUploader
+    "contactNumber":contactnumber,
+    "website":website,
+    "domain":domain,
+    "expertise":expertise,
+    "consultingHours":consultinghours,
+    "researchInfrastructure":researchinfrastructure
 }
   var requestOptions = {
     method: 'POST',
@@ -254,78 +276,17 @@ fetch(Config()['api'] + "/user/companyuser?partnerId=" + partnerid+"&projectid="
     })
     .catch(error => console.log('error', error));
 }
-function changeUploaderHandler(e) {
- 
-  const FILE = e.target.files[0];
-  const form = new FormData();
-  form.append('file', FILE);
-  var requestOptions = {
-      method: 'POST',
-      headers: {
 
-      },
-      body: form
-
-
-  };
-
-  fetch(Config()['api'] + "/utility/image", requestOptions)
-      .then(response => {
-
-
-if(response.status===200){
-          response.json().then(rep => {
-toast.success('با موفقیت آپلود شد')
-           console.log(rep)
-              setImageUploader(rep.path)
-
-          })
-}
-  
-
-
-
-
-
-      })
-      .catch(error => console.log('error', error));
-
-}
-// function just_persian(str){
-
-//   var p = /^[\u0600-\u06FF\s]+$/;
-
-//   if (!p.test(str)) {
-//       alert("not format");
-//       toast.error('لطفا فارسی وارد کنید')
-//       setfname(null)
-//       return
-//   }
-//   else{
-//     console.log(213123)
-//     setfname(str)
-//   }
-//   (e)=>setfname(e.target.value)
-// }
   return (
     <>
     <Header/>
        <div className="form-iust row">
-        {/* <div className='col-md-2 col-right'>
-    
-       
-          <div className='box-logo'> 
-            <img src={Logo}></img>
-          </div>
-          
-          <h6>معاونت بین الملل</h6>
-        
-        </div> */}
+     
   <div className='col-md-12 col-xs-12 col-left'>
   <div style={{display:'flex',flexDirection:'row', justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-          <input checked type="radio" id="persian" name="fav_language" value="persian" />
+          <input  type="radio" id="persian" name="fav_language" value="persian" onClick={()=>window.location.replace('/company?partnerid=1')}/>
 <label for="persian" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>فارسی</label>
-<input type="radio" id="en" name="fav_language" value="en" onClick={()=>window.location.replace('/encompany?partnerid=1')}/>
+<input checked type="radio" id="en" name="fav_language" value="en" />
 <label for="en" style={{marginLeft:'10px',color:'black',marginRight:'10px'}}>English</label>
           </div>
 <div className='row'>
@@ -334,152 +295,51 @@ toast.success('با موفقیت آپلود شد')
   <h6>{partnerdet.description}</h6>
     <div className='box-data'>
     <Box sx={{ width: '100%' ,marginTop:'20px',marginBottom:'20px'}}>
-      <Stepper activeStep={activeStep}>
+      <Stepper activeStep={activeStep} style={{direction:'rtl'}}>
 
             <Step key='yek' >
-              <StepLabel>انتخاب پروژه</StepLabel>
+              <StepLabel>اطلاعات کلی</StepLabel>
             </Step>
             <Step key='do'>
-              <StepLabel >جزییات پروژه</StepLabel>
-            </Step>
-            <Step key='se' >
-              <StepLabel >وارد کردن اطلاعات</StepLabel>
+              <StepLabel >نیازمندی ها</StepLabel>
             </Step>
             <Step key='char' >
               <StepLabel >وضعیت</StepLabel>
             </Step>
       </Stepper>
-      {activeStep === 3 ? (
+      { activeStep ===2 ?(
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-           <div className='finishBox'>
-             <img src={Success}></img>
-             <h1>با تشکر از ثبت شما</h1>
+        <Typography sx={{ mt: 2, mb: 1 }}>
+         <div className='finishBox'>
+           <img src={Success}></img>
+           <h1>با تشکر از ثبت شما</h1>
              <h6>اطلاعات شما با موفقیت ثبت شد</h6>
-           </div>
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
-          
-          </Box>
-        </React.Fragment>
-      ) : activeStep ===2 ?(
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            <div className='box-enter-data row'>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>نام شرکت</h6>
-                    <input  value={fname}  onChange={(e)=>setfname(e.target.value)}/>
-              </div>
-   
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>تلفن</h6>
-                    <input value={phone}  onChange={(e)=>setphone(e.target.value)} />
-              </div>
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>ایمیل</h6>
-                    <input value={email}  onChange={(e)=>setemail(e.target.value)} />
-              </div>
-
-              <div className='each-box col-md-4 col-xs-12'>
-<h6>سابقه کار(سال)</h6>
-                    <input  value={workexp}  onChange={(e)=>setworkexp(e.target.value)}/>
-              </div>
-              <div className='each-box col-md-12 col-xs-12'>
-<h6>سوابق کاری</h6>
-                    <textarea  value={expdes}  onChange={(e)=>setexpdes(e.target.value)}/>
-              </div>
-              <div className='each-box col-md-12 col-xs-12'>
-<h6>نحوه پشتیبانی پروژه</h6>
-                    <textarea  value={supportdes}  onChange={(e)=>setsupportdes(e.target.value)}/>
-              </div>
-              <div className='resumeup'>
-              <input accept="*" onChange={changeUploaderHandler} ref={uploadRef} className='uploader' type='file' />
-                                        <div onClick={() => uploadRef.current.click()} className='change-mode'>
-                                            <p>جهت آپلود روزمه کلیک کنید </p>
-                                        </div>
-              </div>
-            </div>
-            
-            
-            </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              بازگشت
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-  
-
-            <Button onClick={submit}>
-            ثبت
-            </Button>
-          </Box>
-        </React.Fragment>
+         </div>
+        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Box sx={{ flex: '1 1 auto' }} />
+        
+        </Box>
+      </React.Fragment>
       ):activeStep ===1?(
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-            <div className='boxdetail'>
-
-
-              <div className='box'>
-                <h6>
-                  عنوان پروژه
-                  </h6>
-<div  className='inp'>
-{Detailproject.title}
-</div>
-                
+          <Typography sx={{ mt: 2, mb: 1 }}>
+     <div className='box-enter-data row'>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>تخصص مورد نیاز</h6>
+                    <input required value={expertise}  onChange={(e)=>setexpertise(e.target.value)}/>
               </div>
-     
-              <div className='box'>
-                <h6>
-                 حوزه تخصصی
-                  </h6>
-<div  className='inp'>
-{Detailproject.activitydomain}
-</div>
-                
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right',direction:'rtl'}}>
+<h6>چند ساعت مشاوره در هفته نیاز دارید؟</h6>
+                    <input value={consultinghours}  onChange={(e)=>setconsultinghours(e.target.value)} />
               </div>
-              <div className='box'>
-                <h6>
-               توضیحات
-                  </h6>
-<div  className='inp'>
-{Detailproject.description}
-</div>
-                
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right',direction:'rtl'}}>
+<h6> آیا زیرساخت یا امکانات تحقیقاتی موجود دارید؟</h6>
+                    <input value={researchinfrastructure}  onChange={(e)=>setresearchinfrastructure(e.target.value)} />
               </div>
-            </div>
-            
-            
-            
-            </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              بازگشت
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-  
-
-            <Button onClick={handleNext}>
-       ادامه
-            </Button>
-          </Box>
-        </React.Fragment>
-      ):(
-        <React.Fragment>
-        <Typography sx={{ mt: 2, mb: 1 }}>
-        <FormControl className='formbox'>
+              <div className='each-box col-md-12 col-xs-12' style={{textAlign:'right'}}>
+              <FormControl className='formbox' style={{direction:'rtl'}}>
       <FormLabel id="demo-radio-buttons-group-label">لیست پروژه ها</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
@@ -492,9 +352,75 @@ toast.success('با موفقیت آپلود شد')
         ))}
       </RadioGroup>
     </FormControl>
-          </Typography>
+              </div>
+            </div>
+            
+            
+            
+            </Typography>
+            
+            
+            </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Button
+              color="inherit"
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{ mr: 1 }}
+            >
+              بازگشت
+            </Button>
+      
+      
+         
+            <Box sx={{ flex: '1 1 auto' }} />
+      <Button onClick={submit}>
+            ثبت
+            </Button>
+ 
+          </Box>
+        </React.Fragment>
+      ):(
+        <React.Fragment>
+     <Typography sx={{ mt: 2, mb: 1 }}>
+     <div className='box-enter-data row'>
+     <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>اسم</h6>
+                    <input required value={name}  onChange={(e)=>setname(e.target.value)}/>
+              </div>
+ 
+      
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>آدرس</h6>
+                    <input value={address}  onChange={(e)=>setaddress(e.target.value)} />
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+       
+       <h6>شماره</h6>
+                           <input value={contactnumber}  onChange={(e)=>setcontactnumber(e.target.value)} />
+                     </div>
+                     <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>حوزه فعالیت</h6>
+                    <input  value={domain}  onChange={(e)=>setdomain(e.target.value)}/>
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>وبسایت</h6>
+                    <input value={website}  onChange={(e)=>setwebsite(e.target.value)} />
+              </div>
+         
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'right'}}>
+<h6>ایمیل</h6>
+                    <input value={email}  onChange={(e)=>setemail(e.target.value)} />
+              </div>
+            </div>
+            
+            
+            
+            </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-       <Button
+    
+      
+        <Button
             color="inherit"
             disabled={activeStep === 0}
             onClick={handleBack}
@@ -503,13 +429,12 @@ toast.success('با موفقیت آپلود شد')
             بازگشت
           </Button>
 
-
           <Box sx={{ flex: '1 1 auto' }} />
-    <Button onClick={handleNext}>
+  
+  
+          <Button onClick={handleNext}>
           ادامه
           </Button>
-   
-      
         </Box>
       </React.Fragment>
       )}
@@ -520,6 +445,15 @@ toast.success('با موفقیت آپلود شد')
 </div>
 
 </div>
+   {/* <div className='col-md-2 col-right'>
+
+          <div className='box-logo'> 
+            <img src={Logo}></img>
+          </div>
+          
+          <h6>معاونت بین الملل</h6>
+        
+        </div> */}
     </div>
     <Footer/>
     </>
