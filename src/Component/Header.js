@@ -16,7 +16,9 @@ import 'antd/dist/antd.css';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 // import Headimg from '../images/header.jpeg'
-import Headimg from '../images/2tae.png'
+// import Headimg from '../images/2tae.png'
+
+import Headimg from '../images/3tae.jpeg'
 import Jomhori from '../images/jomhori.png'
 const contentStyle = {
     // height: '160px',
@@ -53,7 +55,7 @@ function Header() {
     </div>
     <div className='row'>
   
-  <div className='col-md-8 box-num'>
+  <div className='col-md-7 box-num'>
       <div className='box-data'>
    <div className='col-title'>
           <h1>STRONG TIES AND POWERFUL RELATIONS BETWEEN IRAN UNIVERSITY OF SCIENCE AND TECHNOLOGY AND PETER the Great St.Petersburg Polytechnic University CAN FOSTER HIGHER ACADEMIC GROWTH AND ENABLE FASTER TECHNOLOGICAL ADVANCEMENTS.</h1>
@@ -63,10 +65,10 @@ function Header() {
  
   
   </div>
-  <div class="col-md-4 header-logo-container">
+  <div class="col-md-5 header-logo-container">
                     <a href="/landing" class="custom-logo-link" rel="home" aria-current="page">
-                        <img style={{marginTop:'10px',marginRight:'10px'}} width="170" height="120" src={Headimg} class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px"/>
-                        <img style={{marginTop:'10px',marginRight:'10px'}}height="130" class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px" src={Jomhori}></img>
+                        <img style={{marginTop:'10px',marginRight:'10px'}} width="430" height="120" src={Headimg} class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px"/>
+                        {/* <img style={{marginTop:'10px',marginRight:'10px'}}height="130" class="custom-logo" alt="Iran-Germany Science Day"  sizes="(max-width: 315px) 100vw, 315px" src={Jomhori}></img> */}
                         </a>       
                                  </div>
   </div>

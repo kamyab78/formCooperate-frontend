@@ -60,20 +60,47 @@ function EnCompanyApp() {
   const [projectid,setprojectid]=useState(null)
   const [partnerid,setpartnerid]=useState(null)
   const [skipped, setSkipped] = React.useState(new Set());
-  const [fname, setfname] = useState(null);
-
-  const [phone, setphone] = useState(null);
+  const [name, setname] = useState(null);
+  const [address, setaddress] = useState(null);
+  const [contactnumber, setcontactnumber] = useState(null);
   const [email, setemail] = useState(null);
-
-  const [workexp, setworkexp] = useState(null);
-  const [supportdes, setsupportdes] = useState(null);
-  const [expdes, setexpdes] = useState(null);
+  const [website, setwebsite] = useState(null);
+  const [domain, setdomain] = useState(null);
+  const [expertise, setexpertise] = useState(null);
+  const [consultinghours, setconsultinghours] = useState(null);
+  const [researchinfrastructure, setresearchinfrastructure] = useState(null);
   const uploadRef = useRef(null)
   const handleNext = () => {
-    if(projectid===null){
-      toast.error('Choose a project')
-    return
+    if(activeStep === 0){
+      if(name === null){
+        toast.error('fill name')
+        return
+      }
+      if(address === null){
+        toast.error('fill address')
+        return
+      }
+      if(contactnumber === null){
+        toast.error('fill contactnumber')
+        return
+      }
+      if(email === null){
+        toast.error('fill email')
+        return
+      }
+      if(website === null){
+        toast.error('fill website')
+        return
+      }
+      if(domain === null){
+        toast.error('fill domain')
+        return
+      }
     }
+    // if(projectid===null){
+    //   toast.error('Choose a project')
+    // return
+    // }
     let newSkipped = skipped;
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -185,42 +212,36 @@ fetch(Config()['api'] + "/user/projectdetail?partnerId=" + partnerid+"&projectId
     .catch(error => console.log('error', error));
    }, [projectid]);
 function submit(){
-  if(fname===null){
-    toast.error('fill name')
+  if(expertise===null){
+    toast.error('fill expertise')
     return
   }
 
-  if(phone===null){
-    toast.error('fill phone')
+  if(consultinghours===null){
+    toast.error('fill consultingHours')
     return
   }
-  if(email===null){
-    toast.error('fill email')
+  if(researchinfrastructure===null){
+    toast.error('fill researchInfrastructure')
     return
   }
-  if(workexp===null){
-    toast.error('Fill in the work history')
-    return
-  }
-  if(supportdes===null){
-    toast.error('Fill out the support method')
-    return
-  }
-  if(expdes===null){
-    toast.error('Fill in work records')
+  if(projectid===null){
+    toast.error('select project')
     return
   }
   const body= {
    
-    "name":fname,
+    "name":name,
  
-    "phone":phone,
+    "address":address,
     "email":email,
 
-    "workexp":workexp,
-    "supportdes":supportdes,
-    "hourdes":expdes,
-    "path":imageUploader
+    "contactNumber":contactnumber,
+    "website":website,
+    "domain":domain,
+    "expertise":expertise,
+    "consultingHours":consultinghours,
+    "researchInfrastructure":researchinfrastructure
 }
   var requestOptions = {
     method: 'POST',
@@ -255,43 +276,7 @@ fetch(Config()['api'] + "/user/companyuser?partnerId=" + partnerid+"&projectid="
     })
     .catch(error => console.log('error', error));
 }
-function changeUploaderHandler(e) {
- 
-  const FILE = e.target.files[0];
-  const form = new FormData();
-  form.append('file', FILE);
-  var requestOptions = {
-      method: 'POST',
-      headers: {
 
-      },
-      body: form
-
-
-  };
-
-  fetch(Config()['api'] + "/utility/image", requestOptions)
-      .then(response => {
-
-
-if(response.status===200){
-          response.json().then(rep => {
-toast.success('با موفقیت آپلود شد')
-           console.log(rep)
-              setImageUploader(rep.path)
-
-          })
-}
-  
-
-
-
-
-
-      })
-      .catch(error => console.log('error', error));
-
-}
   return (
     <>
     <Header/>
@@ -313,136 +298,72 @@ toast.success('با موفقیت آپلود شد')
       <Stepper activeStep={activeStep} style={{direction:'ltr'}}>
 
             <Step key='yek' >
-              <StepLabel>Project selection</StepLabel>
+              <StepLabel>General information</StepLabel>
             </Step>
             <Step key='do'>
-              <StepLabel >Project detail</StepLabel>
-            </Step>
-            <Step key='se' >
-              <StepLabel >Enter information</StepLabel>
+              <StepLabel >Requirements</StepLabel>
             </Step>
             <Step key='char' >
               <StepLabel >Status</StepLabel>
             </Step>
       </Stepper>
-      {activeStep === 3 ? (
+      { activeStep ===2 ?(
+        <React.Fragment>
+        <Typography sx={{ mt: 2, mb: 1 }}>
+         <div className='finishBox'>
+           <img src={Success}></img>
+           <h1>Thanks for your registration</h1>
+           <h6>Your information was successfully registered</h6>
+         </div>
+        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+          <Box sx={{ flex: '1 1 auto' }} />
+        
+        </Box>
+      </React.Fragment>
+      ):activeStep ===1?(
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-           <div className='finishBox'>
-             <img src={Success}></img>
-             <h1>Thanks for your registration</h1>
-             <h6>Your information was successfully registered</h6>
-           </div>
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
-          
-          </Box>
-        </React.Fragment>
-      ) : activeStep ===2 ?(
-        <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-            <div className='box-enter-data row'>
+     <div className='box-enter-data row'>
               <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
-<h6>Company Name</h6>
-                    <input  value={fname}  onChange={(e)=>setfname(e.target.value)}/>
+<h6>Needed Expertise</h6>
+                    <input required value={expertise}  onChange={(e)=>setexpertise(e.target.value)}/>
               </div>
-   
-              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
-<h6>Phone</h6>
-                    <input value={phone}  onChange={(e)=>setphone(e.target.value)} />
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left',direction:'ltr'}}>
+<h6>How many consultancy hours do you need per week?</h6>
+                    <input value={consultinghours}  onChange={(e)=>setconsultinghours(e.target.value)} />
               </div>
-              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
-<h6>Email</h6>
-                    <input value={email}  onChange={(e)=>setemail(e.target.value)} />
-              </div>
-              <div className='each-box col-md-4 col-xs-12'>
-    </div>
-              <div className='each-box col-md-4 col-xs-12'>
-   </div>
-              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
-<h6 >Work experience (years)</h6>
-                    <input  value={workexp}  onChange={(e)=>setworkexp(e.target.value)}/>
-              </div>
-    
-              <div className='each-box col-md-12 col-xs-12' style={{textAlign:'left'}}>
-<h6>Resume</h6>
-                    <textarea  value={expdes}  onChange={(e)=>setexpdes(e.target.value)}/>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left',direction:'ltr'}}>
+<h6> Do you have existing research infrastructure or facilities?</h6>
+                    <input value={researchinfrastructure}  onChange={(e)=>setresearchinfrastructure(e.target.value)} />
               </div>
               <div className='each-box col-md-12 col-xs-12' style={{textAlign:'left'}}>
-<h6>How to support the project</h6>
-                    <textarea  value={supportdes}  onChange={(e)=>setsupportdes(e.target.value)}/>
-              </div>
-              <div className='resumeup' style={{textAlign:'left'}}>
-              <input accept="*" onChange={changeUploaderHandler} ref={uploadRef} className='uploader' type='file' />
-                                        <div onClick={() => uploadRef.current.click()} className='change-mode'>
-                                            <p>Click to upload resume </p>
-                                        </div>
+              <FormControl className='formbox' style={{direction:'ltr'}}>
+      <FormLabel id="demo-radio-buttons-group-label">List of projects</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue="female"
+        name="radio-buttons-group"
+        onChange={(e)=>setprojectid(e.target.value)}
+      >
+        {projectList.map((index)=>(
+                  <FormControlLabel value={index.id} control={<Radio />} label={index.title} />
+        ))}
+      </RadioGroup>
+    </FormControl>
               </div>
             </div>
+            
+            
+            
+            </Typography>
             
             
             </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           <Button onClick={submit}>
             Submit
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-  
-
-        
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-          </Box>
-        </React.Fragment>
-      ):activeStep ===1?(
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            <div className='boxdetail' style={{textAlign:'left'}}>
-
-
-              <div className='box'>
-                <h6  style={{textAlign:'left'}}>
-                Project Title
-                  </h6>
-<div  className='inp' >
-{Detailproject.title}
-</div>
-                
-              </div>
-     
-              <div className='box'>
-                <h6  style={{textAlign:'left'}}>
-                Area of ​​Expertise
-                  </h6>
-<div  className='inp'>
-{Detailproject.activitydomain}
-</div>
-                
-              </div>
-              <div className='box'>
-                <h6  style={{textAlign:'left'}}>
-              Description
-                  </h6>
-<div  className='inp'>
-{Detailproject.description}
-</div>
-                
-              </div>
-            </div>
-            
-            
-            
-            </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-          <Button onClick={handleNext}>
-       Continues
             </Button>
          
             <Box sx={{ flex: '1 1 auto' }} />
@@ -460,21 +381,39 @@ toast.success('با موفقیت آپلود شد')
         </React.Fragment>
       ):(
         <React.Fragment>
-        <Typography sx={{ mt: 2, mb: 1 }} style={{direction:'ltr'}} >
-        <FormControl className='formbox'>
-      <FormLabel id="demo-radio-buttons-group-label" >List of projects </FormLabel>
-      <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
-        onChange={(e)=>setprojectid(e.target.value)}
-      >
-        {projectList.map((index)=>(
-                  <FormControlLabel value={index.id} control={<Radio />} label={index.title} />
-        ))}
-      </RadioGroup>
-    </FormControl>
-          </Typography>
+     <Typography sx={{ mt: 2, mb: 1 }}>
+     <div className='box-enter-data row'>
+     <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Contact Number</h6>
+                    <input value={contactnumber}  onChange={(e)=>setcontactnumber(e.target.value)} />
+              </div>
+      
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Address</h6>
+                    <input value={address}  onChange={(e)=>setaddress(e.target.value)} />
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Name</h6>
+                    <input required value={name}  onChange={(e)=>setname(e.target.value)}/>
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Email</h6>
+                    <input value={email}  onChange={(e)=>setemail(e.target.value)} />
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Website</h6>
+                    <input value={website}  onChange={(e)=>setwebsite(e.target.value)} />
+              </div>
+              <div className='each-box col-md-4 col-xs-12' style={{textAlign:'left'}}>
+<h6>Domain of activity</h6>
+                    <input  value={domain}  onChange={(e)=>setdomain(e.target.value)}/>
+              </div>
+        
+            </div>
+            
+            
+            
+            </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
         <Button onClick={handleNext}>
           Continues

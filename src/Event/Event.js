@@ -39,7 +39,10 @@ import Fourthimg from '../images/i4.jpg'
 import Header from '../Component/Header'
 import Footer from '../Component/footer'
 import FirstImgEvent from '../images/ut5.png'
-import SecondImgEvent from '../images/2tae.png'
+// import SecondImgEvent from '../images/2tae.png'
+import SecondImgEvent from '../images/brics-logo.png'
+
+
 const contentStyle = {
     // height: '160px',
     color: '#fff',
@@ -107,15 +110,14 @@ function Event() {
     </div>
     <div className='col-xs-12 col-md-6'>
       
-  <div className='box-item'>
+  <div className='box-item-en'>
     <img src={SecondImgEvent}></img>
-    <div className='text'>
-<h1>
-برنامه ریزی بین دو دانشگاه
-IUST-SPbPU
+    <div className='text-en'>
+<h1 >
+BRICS+ Forum will be held by the St. Petersburg Polytechnic University
 </h1>
 <h2>
-این رخداد در حال برگزاری می باشد
+We are glad to announce that Peter the Great St. Petersburg Polytechnic University (SPbPU) is a strategic partner and co-organizer of the IV International Municipal BRICS+ Forum, which will be held on November 24-26, 2022. The event will take place in St.Petersburg with the support of the Ministry of Foreign Affairs of Russia and Rossotrudnichestvo. The website of the Forum is https://en.imbricsforum.com/.
 </h2>
 </div>
   </div>
